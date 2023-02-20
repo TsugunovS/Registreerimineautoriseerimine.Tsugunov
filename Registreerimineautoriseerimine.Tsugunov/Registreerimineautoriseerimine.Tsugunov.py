@@ -1,7 +1,6 @@
 ﻿from module1 import * 
 l=["Python"]
 p=["12345"]
-
 while True:
     print(l)
     print(p)
@@ -17,6 +16,10 @@ while True:
         break
     else:
         print("Tee õige valik")
+    if v==4:
+        MuudaParool(l,p)
+        
+
 
 
         

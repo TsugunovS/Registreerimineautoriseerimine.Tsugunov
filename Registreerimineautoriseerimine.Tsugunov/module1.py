@@ -33,6 +33,26 @@ def Autoriseerimine(l:list,p:list):
             print("Vale salasõna!")
     else:
         print("Nimi eiole")
+
+def MuudaParool(vana_p, uus_p:float):
+    valik = int(input("1 - muuda login; 2 - muuda parool: "))
+    
+    if valik == 1:
+        uus_nimi = input("Sisestage uus login: ")
+        print("Login muudetud")
+        return uus_nimi
+    elif valik == 2:
+        if vana_p == input("Sisestage vana parool: "):
+            uus_p = input("Sisestage uus parool: ")
+            print("Parool muudetud")
+            return uus_p
+        else:
+            print("Vale parool!")
+    else:
+        print("Vigane valik")
+    
+
+
     
 
     

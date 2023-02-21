@@ -34,28 +34,32 @@ def Autoriseerimine(l:list,p:list):
     else:
         print("Nimi eiole")
 
-def MuudaParool(vana_l, uus_p):
+
+def MuudaParool(l, p):
     """Toimingu valimise taotlus Запрос на выбор действия
     """
     valik = int(input("1 - muuda login; 2 - muuda parool: "))
     
     if valik == 1:
         #Uue kasutajanime taotlemine Запрос на новое имя пользоваттеля
-        uus_nimi= input("Sisestage uus login: ")
+        l=input("Sisestage vana ")
+        uus_l= input("Sisestage uus login: ")
         print("Login muudetud")
-        return uus_nimi
+        l.append(uus_l)
+        return l==uus_l
     elif valik == 2:
         # Проверка правилбности введенного старого пароля
-        if vana_l == input("Sisestage vana parool: "):
+        if p == input("Sisestage vana parool: "):
             # Запрос на новый пароль
             uus_p = input("Sisestage uus parool: ")
             print("Parool muudetud")
-            return uus_p
+            print(p==uus_p)
+            return p==uus_p
         else:
-            # Вывод сообщения об ошибке в случае неправильно введенного старого пароля
+            # сообщения об ошибке если неправильно веден старый пароль
             print("Vale parool!")
     else:
-        # Вывод сообщения об ошибке в случае неправильного выбора действия
+        # сообщения об ошибке если неправильно выбпано действие
         print("Vigane valik")
 
         

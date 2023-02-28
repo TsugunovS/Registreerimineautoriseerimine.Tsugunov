@@ -4,7 +4,7 @@ p=["12345"]
 while True:
     print(l)
     print(p)
-    v=int(input("1-Registreerimine\n2-Autoriseerimine\n3-Välja\n4-MuudaParool "))
+    v=int(input("1-Registreerimine\n2-Autoriseerimine\n3-Välja\n4-MuudaParool\n5-MuudaLogin "))
     if v==1:
         Registreerimine(l,p)
         pass
@@ -18,6 +18,9 @@ while True:
         print("Tee õige valik")
     if v==4:
         MuudaParool(l,p)
+    if v==5:
+        MuudaLogin(l,p)
+
 
         
 

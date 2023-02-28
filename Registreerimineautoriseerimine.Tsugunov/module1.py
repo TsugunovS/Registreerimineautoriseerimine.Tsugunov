@@ -35,32 +35,33 @@ def Autoriseerimine(l:list,p:list):
         print("Nimi eiole")
 
 
-def MuudaParool(l, p):
-    """Toimingu valimise taotlus Запрос на выбор действия
-    """
-    valik = int(input("1 - muuda login; 2 - muuda parool: "))
-    
-    if valik == 1:
-        #Uue kasutajanime taotlemine Запрос на новое имя пользоваттеля
-        l=input("Sisestage vana ")
-        uus_l= input("Sisestage uus login: ")
-        print("Login muudetud")
-        l.append(uus_l)
-        return l==uus_l
-    elif valik == 2:
-        # Проверка правилбности введенного старого пароля
-        if p == input("Sisestage vana parool: "):
-            # Запрос на новый пароль
-            uus_p = input("Sisestage uus parool: ")
-            print("Parool muudetud")
-            print(p==uus_p)
-            return p==uus_p
+def MuudaParool(l:list,p:list):
+    nimi=input("Sisesta oma nimi: ") # запрос на имя пользователя
+    salasona_vana=input("Sisesta oma vana salasõna: ")
+    if nimi in l: # проверка пользователя
+        ind=l.index(nimi) # нахождения пользователя в списке (nimi)
+        if salasona_vana==p[ind]:
+            salasona_uus = input("Sisesta oma uus salasõna: ")
+            p[ind] = salasona_uus
+            print("Salasõna muudetud!")
         else:
-            # сообщения об ошибке если неправильно веден старый пароль
-            print("Vale parool!")
+            print("Vale salasõna!")
     else:
-        # сообщения об ошибке если неправильно выбпано действие
-        print("Vigane valik")
+        print("Nimi ei ole registreeritud.")
+
+    return l, p
+
+def MuudaLogin(l:list,p:list):
+    vana_nimi = input("Sisesta oma vana nimi: ")
+    if vana_nimi in l:
+        uus_nimi = input("Sisesta oma uus nimi: ")
+        ind = l.index(vana_nimi)
+        l[ind] = uus_nimi
+        print("Nimi muudetud")
+    else:
+        print("Nimi ei ole registreeritud.")
+
+    return l, p
 
         
 
